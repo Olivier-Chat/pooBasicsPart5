@@ -1,7 +1,8 @@
 <?php
 
 require_once 'Vehicle.php';
-class Car extends Vehicle
+require_once 'LightableInterface.php';
+class Car extends Vehicle implements LightableInterface
 {
     private string $energy;
     private int $energyLevel;
@@ -46,5 +47,13 @@ class Car extends Vehicle
             throw new Exception("Frein à main enclanché");
         }
         echo "Here We Go" . PHP_EOL;
+    }
+    public function switchOn(): bool
+    {
+        return true;
+    }
+    public function switchOff(): bool
+    {
+        return false;
     }
 }

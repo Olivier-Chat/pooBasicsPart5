@@ -1,13 +1,14 @@
 <?php
 require 'Car.php';
-$auto = new Car('red',4,'fuel');
-try{
-    $auto->start();
-}
-catch (Exception $e){
-    echo ($e->getMessage()) . PHP_EOL;
-    $auto->setParkBrake();
-}
-finally{
-    echo 'Ma voiture roule comme un donut' . PHP_EOL;
-}
+require 'Bicycle.php';
+require 'SkateBoard.php';
+
+$voiture = new Car('red',4,'fuel');
+$velo = new Bicycle('red',1);
+$skate = new SkateBoard('white',0);
+var_dump($voiture->switchOn());
+$velo->setCurrentSpeed(9);
+var_dump($velo->switchOn());
+$velo->setCurrentSpeed(11);
+var_dump($velo->switchOn());
+
